@@ -30,23 +30,6 @@ function setupSmoothScrolling() {
   });
 }
 
-// Animate skill bars
-function animateSkillBars() {
-  const skillBars = document.querySelectorAll(".skill-progress");
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const width = entry.target.getAttribute("data-width");
-        entry.target.style.width = width;
-      }
-    });
-  });
-
-  skillBars.forEach((bar) => {
-    observer.observe(bar);
-  });
-}
-
 // Scroll animations
 function setupScrollAnimations() {
   const observer = new IntersectionObserver(
@@ -54,11 +37,14 @@ function setupScrollAnimations() {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add("animated");
+        } else {
+          // Optional: Remove 'animated' class when out of view
+          // entry.target.classList.remove('animated');
         }
       });
     },
     {
-      threshold: 0.1,
+      threshold: 0.1, // Trigger when 10% of the element is visible
     }
   );
 
@@ -78,16 +64,6 @@ function setupNavbarScroll() {
     }
   });
 }
-
-// Initialize everything when page loads
-document.addEventListener("DOMContentLoaded", function () {
-  createParticles();
-  setupSmoothScrolling();
-  animateSkillBars();
-  setupScrollAnimations();
-  setupNavbarScroll();
-  setupMobileMenu();
-});
 
 // Mobile menu functionality
 function setupMobileMenu() {
@@ -123,7 +99,11 @@ function setupMobileMenu() {
 
   // Close mobile menu when clicking outside
   document.addEventListener("click", function (e) {
-    if (!menuToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
+    if (
+      !menuToggle.contains(e.target) &&
+      !mobileMenu.contains(e.target) &&
+      mobileMenu.classList.contains("active") // Only close if it's active
+    ) {
       menuToggle.classList.remove("active");
       mobileMenu.classList.remove("active");
       document.body.style.overflow = "auto";
@@ -131,7 +111,49 @@ function setupMobileMenu() {
   });
 }
 
-// Add some interactivity to project cards
+// Project Load More Functionality
+function setupProjectLoadMore() {
+  const projectsContainer = document.getElementById("projects-container");
+  const loadMoreButton = document.getElementById("load-more-projects");
+  const projects = Array.from(
+    projectsContainer.getElementsByClassName("project-card")
+  );
+  const projectsToShowInitially = 3;
+  let projectsShown = projectsToShowInitially;
+
+  // Hide all projects beyond the initial count
+  function hideExtraProjects() {
+    projects.forEach((project, index) => {
+      if (index >= projectsToShowInitially) {
+        project.classList.add("hidden");
+      }
+    });
+    if (projects.length <= projectsToShowInitially) {
+      loadMoreButton.style.display = "none"; // Hide button if no more projects
+    }
+  }
+
+  // Show more projects on button click
+  loadMoreButton.addEventListener("click", () => {
+    const nextProjects = projects.slice(
+      projectsShown,
+      projectsShown + projectsToShowInitially
+    );
+    nextProjects.forEach((project) => {
+      project.classList.remove("hidden");
+      project.classList.add("animated"); // Apply animation for newly shown projects
+    });
+    projectsShown += nextProjects.length;
+
+    if (projectsShown >= projects.length) {
+      loadMoreButton.style.display = "none"; // Hide button if all projects are shown
+    }
+  });
+
+  hideExtraProjects(); // Initialize on page load
+}
+
+// Add some interactivity to project cards (keeping previous hover effect)
 document.querySelectorAll(".project-card").forEach((card) => {
   card.addEventListener("mouseenter", function () {
     this.style.transform = "translateY(-10px) scale(1.02)";
@@ -140,4 +162,14 @@ document.querySelectorAll(".project-card").forEach((card) => {
   card.addEventListener("mouseleave", function () {
     this.style.transform = "translateY(0) scale(1)";
   });
+});
+
+// Initialize everything when page loads
+document.addEventListener("DOMContentLoaded", function () {
+  createParticles();
+  setupSmoothScrolling();
+  setupScrollAnimations();
+  setupNavbarScroll();
+  setupMobileMenu();
+  setupProjectLoadMore();
 });

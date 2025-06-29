@@ -8,11 +8,9 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- Navigation -->
     <nav>
       <div class="nav-container">
         <div class="logo">Honey Kotecha</div>
@@ -20,16 +18,23 @@
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
           <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li>
+            <a href="#certs-volunteering">Certifications / Volunteering</a>
+          </li>
+          <li><a href="#footer-contact">Contact</a></li>
         </ul>
+        <div class="menu-toggle" id="menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
     </nav>
 
-    <!-- Particles Background -->
     <div class="particles" id="particles"></div>
 
-    <!-- Hero Section -->
     <section id="home" class="hero">
       <div class="hero-content">
         <h1>Honey Kotecha</h1>
@@ -40,19 +45,18 @@
           visualization with a keen eye for patterns that drive business
           decisions.
         </p>
-        <a href="#projects" class="cta-button">View My Work</a>
+      </div>
+      <div class="hero-image">
+        <img
+          src="images/hero.svg"
+          alt="3D Data Science Illustration"
+        />
       </div>
     </section>
 
-    <!-- About Section -->
     <section id="about" class="animate-on-scroll">
       <h2 class="section-title">About Me</h2>
       <div class="about-content">
-        <div class="about-image">
-          <div class="profile-img">
-            <i class="fas fa-user"></i>
-          </div>
-        </div>
         <div class="about-text">
           <p>
             I'm a recent graduate with a strong foundation in data science and
@@ -67,108 +71,183 @@
             meaningful projects that make a positive impact through intelligent
             data analysis.
           </p>
+          <a href="Honey_Kotecha_Resume.pdf" target="_blank" class="cta-button"
+            >View My Resume</a
+          >
         </div>
       </div>
     </section>
 
-    <!-- Skills Section -->
     <section id="skills" class="animate-on-scroll">
       <h2 class="section-title">Skills & Technologies</h2>
-      <div class="skills-grid">
-        <div class="skill-card">
+      <div class="skills-grid-new">
+        <div class="skill-category">
           <h3><i class="fas fa-code"></i> Programming Languages</h3>
-          <div class="skill-item">
-            <span>Python</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="90%"></div>
+          <div class="skill-icons">
+            <div class="skill-icon-item">
+              <img src="images/language/python.png" alt="Python" />
+              <span>Python</span>
             </div>
-          </div>
-          <div class="skill-item">
-            <span>R</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="80%"></div>
+
+            <div class="skill-icon-item">
+              <img src="images/language/java.png" alt="SQL" />
+              <span>Java</span>
             </div>
-          </div>
-          <div class="skill-item">
-            <span>SQL</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="85%"></div>
+            <div class="skill-icon-item">
+              <img src="images/language/c.png" alt="SQL" />
+              <span>C</span>
+            </div>
+            <div class="skill-icon-item">
+              <img src="images/language/r.png" alt="R" />
+              <span>R</span>
+            </div>
+            <div class="skill-icon-item">
+              <img src="images/language/html.png" alt="SQL" />
+              <span>HTML</span>
+            </div>
+            <div class="skill-icon-item">
+              <img src="images/language/js.png" alt="SQL" />
+              <span>Javascript</span>
             </div>
           </div>
         </div>
 
-        <div class="skill-card">
-          <h3><i class="fas fa-brain"></i> Machine Learning</h3>
-          <div class="skill-item">
-            <span>Scikit-learn</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="85%"></div>
+        <div class="skill-category">
+          <h3><i class="fas fa-brain"></i>Libraries / Frameworks</h3>
+          <div class="skill-icons">
+            <div class="skill-icon-item">
+              <img src="images/framework/css.png" alt="Scikit-learn" />
+              <span>Css</span>
             </div>
-          </div>
-          <div class="skill-item">
-            <span>TensorFlow</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="75%"></div>
+            <div class="skill-icon-item">
+              <img src="images/framework/numpy.png" alt="Scikit-learn" />
+              <span>NumPy</span>
             </div>
-          </div>
-          <div class="skill-item">
-            <span>PyTorch</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="70%"></div>
+            <div class="skill-icon-item">
+              <img src="images/framework/pandas.png" alt="Scikit-learn" />
+              <span>Pandas</span>
             </div>
-          </div>
-        </div>
-
-        <div class="skill-card">
-          <h3><i class="fas fa-chart-bar"></i> Data Visualization</h3>
-          <div class="skill-item">
-            <span>Matplotlib</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="90%"></div>
+            <div class="skill-icon-item">
+              <img src="images/framework/matplotlib.png" alt="Scikit-learn" />
+              <span>Matplotlib</span>
             </div>
-          </div>
-          <div class="skill-item">
-            <span>Seaborn</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="85%"></div>
+            <div class="skill-icon-item">
+              <img src="images/framework/scikit-learn.png" alt="Scikit-learn" />
+              <span>Scikit-learn</span>
             </div>
-          </div>
-          <div class="skill-item">
-            <span>Tableau</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="80%"></div>
+            <div class="skill-icon-item">
+              <img src="images/framework/django.png" alt="Scikit-learn" />
+              <span>Django</span>
             </div>
           </div>
         </div>
 
-        <div class="skill-card">
-          <h3><i class="fas fa-database"></i> Data Tools</h3>
-          <div class="skill-item">
-            <span>Pandas</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="95%"></div>
+        <div class="skill-category">
+          <h3><i class="fas fa-chart-bar"></i>IoT</h3>
+          <div class="skill-icons">
+            <div class="skill-icon-item">
+              <img src="images/iot/arduino-programing.png" alt="Matplotlib" />
+              <span>Arduino Programing</span>
+            </div>
+            <div class="skill-icon-item">
+              <img src="images/iot/arduino-ide.png" alt="Seaborn" />
+              <span>Arduino IDE</span>
             </div>
           </div>
-          <div class="skill-item">
-            <span>NumPy</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="90%"></div>
+        </div>
+
+        <div class="skill-category">
+          <h3><i class="fas fa-database"></i>Tools</h3>
+          <div class="skill-icons">
+            <div class="skill-icon-item">
+              <img src="images/tools/sql.png" alt="Pandas" />
+              <span>SQL</span>
+            </div>
+            <div class="skill-icon-item">
+              <img src="images/tools/power-bi.png" alt="NumPy" />
+              <span>Power BI</span>
+            </div>
+            <div class="skill-icon-item">
+              <img src="images/tools/excel.png" alt="Apache Spark" />
+              <span>Excel</span>
+            </div>
+            <div class="skill-icon-item">
+              <img src="images/tools/gitHub.png" alt="Apache Spark" />
+              <span>GitHub</span>
             </div>
           </div>
-          <div class="skill-item">
-            <span>Apache Spark</span>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="65%"></div>
+        </div>
+        <div class="skill-category">
+          <h3><i class="fas fa-handshake"></i>Skills</h3>
+          <div class="skill-icons">
+            <div class="skill-icon-item">
+              <img src="images/skills/public.png" alt="Apache Spark" />
+              <span>Public Speaking</span>
+            </div>
+            <div class="skill-icon-item">
+              <img src="images/skills/problem-solving.png" alt="Apache Spark" />
+              <span>Problem Solving</span>
+            </div>
+            <div class="skill-icon-item">
+              <img src="images/skills/doc.png" alt="Apache Spark" />
+              <span>Technical Documentation</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Projects Section -->
+    <section id="experience" class="animate-on-scroll">
+      <h2 class="section-title">Experience</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>Data Science Intern <br />@ Tech Innovations Inc.</h3>
+            <span class="timeline-date">Jan 2024 - Present</span>
+            <ul>
+              <li>
+                Assisted in developing predictive models for customer churn,
+                improving accuracy by 15%.
+              </li>
+              <li>
+                Cleaned and preprocessed large datasets using Python and Pandas.
+              </li>
+              <li>
+                Collaborated with senior data scientists on A/B testing and
+                experiment design.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>Research Assistant <br />@ University of Analytics</h3>
+            <span class="timeline-date">Sep 2022 - Dec 2023</span>
+            <ul>
+              <li>
+                Conducted statistical analysis on research data, contributing to
+                two published papers.
+              </li>
+              <li>
+                Utilized R for data manipulation and visualization of complex
+                datasets.
+              </li>
+              <li>
+                Developed automated scripts to collect and analyze public health
+                data.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="projects" class="animate-on-scroll">
       <h2 class="section-title">Featured Projects</h2>
-      <div class="projects-grid">
+      <div class="projects-grid" id="projects-container">
         <div class="project-card">
           <div class="project-image">
             <i class="fas fa-chart-line"></i>
@@ -189,9 +268,9 @@
               <a href="#" class="project-link"
                 ><i class="fab fa-github"></i> Code</a
               >
-              <a href="#" class="project-link"
+              <!-- <a href="#" class="project-link"
                 ><i class="fas fa-external-link-alt"></i> Demo</a
-              >
+              > -->
             </div>
           </div>
         </div>
@@ -216,9 +295,9 @@
               <a href="#" class="project-link"
                 ><i class="fab fa-github"></i> Code</a
               >
-              <a href="#" class="project-link"
+              <!-- <a href="#" class="project-link"
                 ><i class="fas fa-external-link-alt"></i> Demo</a
-              >
+              > -->
             </div>
           </div>
         </div>
@@ -243,47 +322,221 @@
               <a href="#" class="project-link"
                 ><i class="fab fa-github"></i> Code</a
               >
-              <a href="#" class="project-link"
+              <!-- <a href="#" class="project-link"
                 ><i class="fas fa-external-link-alt"></i> Demo</a
+              > -->
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card hidden">
+          <div class="project-image">
+            <i class="fas fa-car"></i>
+          </div>
+          <div class="project-info">
+            <h3>Automobile Price Prediction</h3>
+            <p>
+              A regression model to predict used car prices based on various
+              features like make, model, year, and mileage.
+            </p>
+            <div class="project-tags">
+              <span class="tag">Python</span>
+              <span class="tag">Scikit-learn</span>
+              <span class="tag">Linear Regression</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link"
+                ><i class="fab fa-github"></i> Code</a
               >
+              <!-- <a href="#" class="project-link"
+                ><i class="fas fa-external-link-alt"></i> Demo</a
+              > -->
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card hidden">
+          <div class="project-image">
+            <i class="fas fa-store"></i>
+          </div>
+          <div class="project-info">
+            <h3>Sales Forecasting Dashboard</h3>
+            <p>
+              Interactive dashboard built to forecast future sales using time
+              series models and provide actionable insights.
+            </p>
+            <div class="project-tags">
+              <span class="tag">R</span>
+              <span class="tag">Shiny</span>
+              <span class="tag">ARIMA</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link"
+                ><i class="fab fa-github"></i> Code</a
+              >
+              <!-- <a href="#" class="project-link"
+                ><i class="fas fa-external-link-alt"></i> Demo</a
+              > -->
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card hidden">
+          <div class="project-image">
+            <i class="fas fa-film"></i>
+          </div>
+          <div class="project-info">
+            <h3>Movie Recommendation System</h3>
+            <p>
+              Developed a content-based movie recommendation system using cosine
+              similarity and movie metadata.
+            </p>
+            <div class="project-tags">
+              <span class="tag">Python</span>
+              <span class="tag">Pandas</span>
+              <span class="tag">Cosine Similarity</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link"
+                ><i class="fab fa-github"></i> Code</a
+              >
+              <!-- <a href="#" class="project-link"
+                ><i class="fas fa-external-link-alt"></i> Demo</a
+              > -->
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card hidden">
+          <div class="project-image">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <div class="project-info">
+            <h3>Geospatial Data Analysis</h3>
+            <p>
+              Analyzed geographical data to identify optimal locations for new
+              retail stores using clustering algorithms.
+            </p>
+            <div class="project-tags">
+              <span class="tag">Python</span>
+              <span class="tag">Geopandas</span>
+              <span class="tag">K-Means</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link"
+                ><i class="fab fa-github"></i> Code</a
+              >
+              <!-- <a href="#" class="project-link"
+                ><i class="fas fa-external-link-alt"></i> Demo</a
+              > -->
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card hidden">
+          <div class="project-image">
+            <i class="fas fa-handshake"></i>
+          </div>
+          <div class="project-info">
+            <h3>Customer Segmentation</h3>
+            <p>
+              Segmented customer base using unsupervised learning to tailor
+              marketing strategies and improve engagement.
+            </p>
+            <div class="project-tags">
+              <span class="tag">Python</span>
+              <span class="tag">Scikit-learn</span>
+              <span class="tag">Clustering</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link"
+                ><i class="fab fa-github"></i> Code</a
+              >
+              <!-- <a href="#" class="project-link"
+                ><i class="fas fa-external-link-alt"></i> Demo</a
+              > -->
             </div>
           </div>
         </div>
       </div>
+      <div class="load-more-container">
+        <button id="load-more-projects" class="cta-button">
+          Load More Projects
+        </button>
+      </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="animate-on-scroll">
-      <h2 class="section-title">Get In Touch</h2>
-      <div class="contact-content">
-        <p>
-          I'm always interested in new opportunities and collaborations. Let's
-          connect!
-        </p>
-        <div class="contact-info">
-          <div class="contact-item">
-            <i class="fas fa-envelope"></i>
-            <h3>Email</h3>
-            <p>alex.morgan@email.com</p>
+    <section id="certs-volunteering" class="animate-on-scroll">
+      <h2 class="section-title">Certifications & Volunteering</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>Google Data Analytics Professional Certificate</h3>
+            <span class="timeline-date">Issued: March 2024</span>
+            <p>
+              Completed an intensive program covering data analysis, SQL, R,
+              Tableau, and case study applications.
+            </p>
           </div>
-          <div class="contact-item">
-            <i class="fab fa-linkedin"></i>
-            <h3>LinkedIn</h3>
-            <p>linkedin.com/in/alexmorgan</p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>
+              Volunteer Data Analyst <br />@ Local Non-Profit Organization
+            </h3>
+            <span class="timeline-date">Oct 2023 - Present</span>
+            <p>
+              Assisting with data collection and reporting to optimize resource
+              allocation for community programs.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>
+              Machine Learning Specialization <br />(DeepLearning.AI - Coursera)
+            </h3>
+            <span class="timeline-date">Completed: November 2023</span>
+            <p>
+              Gained in-depth knowledge of supervised and unsupervised learning
+              algorithms, neural networks, and model evaluation.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-      <div class="social-links">
-        <a href="#"><i class="fab fa-github"></i></a>
-        <a href="#"><i class="fab fa-linkedin"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-kaggle"></i></a>
+    <footer id="footer-contact">
+      <h2 class="section-title">Get In Touch</h2>
+      <p class="contact-tagline">
+        I'm always interested in new opportunities and collaborations. Let's
+        connect!
+      </p>
+      <div class="contact-info-footer">
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <h3>Email</h3>
+          <p>honey.kotecha@email.com</p>
+        </div>
+        <div class="contact-item">
+          <i class="fab fa-linkedin"></i>
+          <h3>LinkedIn</h3>
+          <p>linkedin.com/in/honeykotecha</p>
+        </div>
+        <div class="contact-item">
+          <i class="fab fa-github"></i>
+          <h3>GitHub</h3>
+          <p>github.com/honeykotecha</p>
+        </div>
       </div>
-      <p>&copy; 2025 Alex Morgan. All rights reserved.</p>
+      <p class="copyright">&copy; 2025 Honey Kotecha. All rights reserved.</p>
     </footer>
+
+    <script src="script.js"></script>
   </body>
 </html>
